@@ -1,0 +1,8 @@
+.piecehole {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid red;
+  z-index: 3;
+  background-color: gray;
+  border-radius: 50%;
+}

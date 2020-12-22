@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Board from './Board/Board';
 import TopBanner from './TopBanner/TopBanner';
 import ResetButton from './ResetButton/ResetButton';
-import './MainContent.css';
 import CONST from '../../constants';
+import './MainContent.css';
 
 export default class MainContent extends Component {
   constructor() {
@@ -17,12 +17,12 @@ export default class MainContent extends Component {
   }
 
   render() {
-    const { topBannerMsg } = this.state;
+    const { topBannerMsg, board } = this.state;
 
     return (
       <div className="centered">
         <TopBanner msg={topBannerMsg} />
-        <Board />
+        <Board pieces={board} />
         <ResetButton />
       </div>
     );
