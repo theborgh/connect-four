@@ -1,0 +1,9 @@
+.board {
+  width: 80%;
+  height: 20rem;
+  margin: 0 auto;
+  background-color: rgb(221, 187, 34);
+
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
