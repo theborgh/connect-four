@@ -1,0 +1,10 @@
+.top-banner {
+  background: linear-gradient(
+    90deg,
+    rgba(60, 112, 143, 1) 0%,
+    rgba(85, 201, 150, 1) 47%
+  );
+  width: 70%;
+  padding: 0.3rem;
+  margin: 1rem auto;
+}

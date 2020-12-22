@@ -5,6 +5,10 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: rem;
   color: white;
+}
+
+.App {
+  height: 100vh;
 }

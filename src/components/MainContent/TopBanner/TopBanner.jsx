@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './TopBanner.css';
 
-export default class TopBanner extends Component {
-  render() {
-    return <div>Top banner</div>;
-  }
+export default function TopBanner({ msg }) {
+  return <div className="top-banner">{msg}</div>;
 }
