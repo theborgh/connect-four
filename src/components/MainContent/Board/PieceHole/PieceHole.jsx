@@ -1,6 +1,10 @@
 import React from 'react';
 import './PieceHole.css';
 
-export default function PieceHole() {
-  return <div className="piecehole"></div>;
+const logClick = (col, row) => {
+  console.log('Clicked a hole', col, row);
+};
+
+export default function PieceHole({ col, row }) {
+  return <div className="piecehole" onClick={() => logClick(col, row)}></div>;
 }

@@ -1,10 +1,10 @@
 .board {
   display: flex;
+  flex-direction: column;
   width: 55rem;
   height: 40rem;
   margin: 0 auto;
   background-color: rgb(221, 187, 34);
-
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }

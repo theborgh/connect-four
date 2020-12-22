@@ -8,4 +8,5 @@
   margin: 0 1rem;
   /* after margin, 9% is enough space for 7 items but not 8 */
   flex: 1 0 9%;
+  cursor: pointer;
 }
