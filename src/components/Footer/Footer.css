@@ -1,0 +1,17 @@
+.footer {
+  background-color: coral;
+  margin: auto;
+}
+
+.footer-text {
+  text-align: center;
+  color: white;
+}
+
+.footer-text a {
+  font-weight: 700;
+}
+
+.footer-text a:visited {
+  color: gray;
+}
