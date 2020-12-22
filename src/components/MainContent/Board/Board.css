@@ -1,6 +1,5 @@
 .board {
   display: flex;
-  flex-direction: column;
   width: 55rem;
   height: 40rem;
   margin: 0 auto;
@@ -12,6 +11,7 @@
 .pieceholes-container {
   margin: 3rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-self: center;
 }
