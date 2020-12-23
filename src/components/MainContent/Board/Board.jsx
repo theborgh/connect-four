@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import './Board.css';
-import PieceHole from './PieceHole/PieceHole';
+import BoardColumn from './BoardColumn/BoardColumn';
 
 export default class Board extends Component {
   render() {
-    const { pieces } = this.props;
+    const { pieces, nextToMove, handleMove } = this.props;
 
     return (
       <div className="board">
         <div className="pieceholes-container">
           {pieces.map((column, i) => (
-            <div className="column">
-              {column.map((el, j) => (
-                <PieceHole key={i + '-' + j} value={el} col={i} row={j} />
-              ))}
-            </div>
+            <BoardColumn
+              key={i}
+              index={i}
+              column={column}
+              nextToMove={nextToMove}
+              handleMove={handleMove}
+            />
           ))}
         </div>
       </div>

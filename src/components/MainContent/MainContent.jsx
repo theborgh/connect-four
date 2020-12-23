@@ -13,16 +13,29 @@ export default class MainContent extends Component {
       board: Array(CONST.columnCount).fill(
         Array(CONST.rowCount).fill(CONST.EMPTY)
       ),
+      nextToMove: CONST.PLAYER_1,
     };
   }
 
+  toggleNextPlayer = () => {
+    const nextPlayer =
+      this.state.nextToMove === CONST.PLAYER_1
+        ? CONST.PLAYER_2
+        : CONST.PLAYER_1;
+    this.setState({ nextToMove: nextPlayer });
+  };
+
   render() {
-    const { topBannerMsg, board } = this.state;
+    const { topBannerMsg, board, nextToMove } = this.state;
 
     return (
       <div className="centered">
         <TopBanner msg={topBannerMsg} />
-        <Board pieces={board} />
+        <Board
+          pieces={board}
+          nextToMove={nextToMove}
+          handleMove={this.toggleNextPlayer}
+        />
         <ResetButton />
       </div>
     );
