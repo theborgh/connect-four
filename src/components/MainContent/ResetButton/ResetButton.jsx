@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import './ResetButton.css';
 
 export default class ResetButton extends Component {
   render() {
-    return <button>Reset game</button>;
+    return (
+      <button className="reset-button" onClick={this.props.onClick}>
+        Reset game
+      </button>
+    );
   }
 }

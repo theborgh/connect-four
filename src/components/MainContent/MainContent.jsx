@@ -18,6 +18,15 @@ export default class MainContent extends Component {
     };
   }
 
+  resetBoard = () => {
+    this.setState({
+      board: Array(CONST.columnCount).fill(
+        Array(CONST.rowCount).fill(CONST.EMPTY)
+      ),
+      nextToMove: CONST.PLAYER_1,
+    });
+  };
+
   handleMove = (column) => {
     const { nextToMove, board } = this.state;
 
@@ -50,7 +59,7 @@ export default class MainContent extends Component {
           nextToMove={nextToMove}
           handleMove={this.handleMove}
         />
-        <ResetButton />
+        <ResetButton onClick={this.resetBoard} />
       </div>
     );
   }
