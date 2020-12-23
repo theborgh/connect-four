@@ -11,6 +11,7 @@ export default class BoardColumn extends Component {
   render() {
     const { column, index, nextToMove, board } = this.props;
 
+    // TODO: highlight the column in the color of the next player to move
     return (
       <div className="column" onClick={() => this.placePiece(index)}>
         {column.map((el, j) =>
