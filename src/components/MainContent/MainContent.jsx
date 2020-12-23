@@ -10,7 +10,7 @@ export default class MainContent extends Component {
   constructor() {
     super();
     this.state = {
-      topBannerMsg: 'Now to move: Player 1',
+      topBannerMsg: CONST.NOW_TO_MOVE,
       board: Array(CONST.columnCount).fill(
         Array(CONST.rowCount).fill(CONST.EMPTY)
       ),
@@ -20,6 +20,7 @@ export default class MainContent extends Component {
 
   resetBoard = () => {
     this.setState({
+      topBannerMsg: CONST.NOW_TO_MOVE,
       board: Array(CONST.columnCount).fill(
         Array(CONST.rowCount).fill(CONST.EMPTY)
       ),
@@ -43,17 +44,24 @@ export default class MainContent extends Component {
       // Toggle next player
       const nextPlayer =
         nextToMove === CONST.PLAYER_1 ? CONST.PLAYER_2 : CONST.PLAYER_1;
-      this.setState({ nextToMove: nextPlayer, board });
+      this.setState({
+        nextToMove: nextPlayer,
+        board,
+        topBannerMsg: CONST.NOW_TO_MOVE,
+      });
+    } else {
+      this.setState({
+        topBannerMsg: CONST.NO_MORE_ROOM,
+      });
     }
-    // TODO: error message?
   };
 
   render() {
     const { topBannerMsg, board, nextToMove } = this.state;
 
     return (
-      <div className="centered">
-        <TopBanner msg={topBannerMsg} />
+      <div className="main">
+        <TopBanner msg={topBannerMsg} nextPlayer={nextToMove} />
         <Board
           pieces={board}
           nextToMove={nextToMove}
