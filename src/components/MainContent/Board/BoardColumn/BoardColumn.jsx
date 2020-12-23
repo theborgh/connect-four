@@ -11,9 +11,14 @@ export default class BoardColumn extends Component {
   render() {
     const { column, index, nextToMove, board } = this.props;
 
-    // TODO: highlight the column in the color of the next player to move
+    // TODO: use css GRID to display pieces and holes!
     return (
-      <div className="column" onClick={() => this.placePiece(index)}>
+      <div
+        className={`column ${
+          nextToMove === CONST.PLAYER_1 ? 'blue-bg' : 'red-bg'
+        }`}
+        onClick={() => this.placePiece(index)}
+      >
         {column.map((el, j) =>
           board[index][j] === CONST.EMPTY ? (
             <PieceHole key={index + '-' + j} />

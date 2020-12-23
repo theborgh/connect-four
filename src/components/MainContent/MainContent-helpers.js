@@ -123,6 +123,4 @@ const checkForColumnWin = (board) => {
   return false;
 };
 
-const checkForDiagonalWin = (board) => {
-  return false;
-};
+const checkForDiagonalWin = (board) => {};

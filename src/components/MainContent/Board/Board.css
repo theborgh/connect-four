@@ -6,6 +6,9 @@
   background-color: rgb(221, 187, 34);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+  -webkit-box-shadow: 11px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .pieceholes-container {
@@ -17,6 +20,13 @@
 }
 
 .column:hover {
-  background-color: orangered;
   cursor: pointer;
+}
+
+.blue-bg:hover {
+  background-color: rgba(0, 0, 255, 0.7);
+}
+
+.red-bg:hover {
+  background-color: rgba(255, 0, 0, 0.7);
 }
