@@ -9,14 +9,14 @@ export default class BoardColumn extends Component {
   };
 
   render() {
-    const { column, index, nextToMove, board } = this.props;
+    const { column, index, nextToMove, board, isGameFinished } = this.props;
 
     // TODO: use css GRID to display pieces and holes!
     return (
       <div
         className={`column ${
           nextToMove === CONST.PLAYER_1 ? 'blue-bg' : 'red-bg'
-        }`}
+        } ${isGameFinished ? 'no-bg' : ''}`}
         onClick={() => this.placePiece(index)}
       >
         {column.map((el, j) =>

@@ -72,7 +72,7 @@ export default class MainContent extends Component {
   };
 
   render() {
-    const { topBannerMsg, board, nextToMove } = this.state;
+    const { topBannerMsg, board, nextToMove, isGameFinished } = this.state;
 
     return (
       <div className="main">
@@ -81,6 +81,7 @@ export default class MainContent extends Component {
           pieces={board}
           nextToMove={nextToMove}
           handleMove={this.handleMove}
+          isGameFinished={isGameFinished}
         />
         <ResetButton onClick={this.resetBoard} />
       </div>

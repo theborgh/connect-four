@@ -30,3 +30,7 @@
 .red-bg:hover {
   background-color: rgba(255, 0, 0, 0.7);
 }
+
+.no-bg:hover {
+  background-color: transparent;
+}
