@@ -88,6 +88,38 @@ const checkForRowWin = (board) => {
 };
 
 const checkForColumnWin = (board) => {
+  let consecutiveP1Count = 0,
+    consecutiveP2Count = 0;
+  let previousPiece = CONST.EMPTY;
+
+  for (let i = 0; i < CONST.rowCount; i++) {
+    for (let j = 0; j < CONST.columnCount; j++) {
+      if (board[j][i] === CONST.PLAYER_1) {
+        if (previousPiece === CONST.PLAYER_1) {
+          consecutiveP1Count++;
+          if (consecutiveP1Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 1;
+          consecutiveP2Count = 0;
+        }
+      } else if (board[j][i] === CONST.PLAYER_2) {
+        if (previousPiece === CONST.PLAYER_2) {
+          consecutiveP2Count++;
+          if (consecutiveP2Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 0;
+          consecutiveP2Count = 1;
+        }
+      }
+
+      previousPiece = board[j][i];
+    }
+
+    consecutiveP1Count = 0;
+    consecutiveP2Count = 0;
+    previousPiece = CONST.EMPTY;
+  }
+
   return false;
 };
 

@@ -48,7 +48,7 @@ export default class MainContent extends Component {
 
       newBoard[column] = newColumn;
 
-      // TODO: check win and draw conditions
+      // TODO: check diagonal win condition
       const winState = checkEndgameConditions(newBoard);
 
       // Toggle next player
@@ -58,10 +58,11 @@ export default class MainContent extends Component {
         nextToMove: nextPlayer,
         board: newBoard,
         topBannerMsg: winState,
+        isGameFinished:
+          winState === CONST.DRAW || winState === CONST.PLAYER_WINS,
       });
     } else {
-      // TODO: handle 'no more room' and 'game finished' cases
-
+      // Could not insert because there is no more room in the selected column, but the game is still ongoing
       if (!isGameFinished) {
         this.setState({
           topBannerMsg: CONST.NO_MORE_ROOM,
