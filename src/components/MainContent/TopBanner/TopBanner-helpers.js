@@ -9,9 +9,16 @@ export const getMessage = (msg, nextPlayer) => {
     case CONST.DRAW:
       return CONST.DRAW;
     case CONST.PLAYER_WINS:
-      return `${CONST.PLAYER_WINS.replace('{PLAYER}', nextPlayer)}`;
+      return `${CONST.PLAYER_WINS.replace(
+        '{PLAYER}',
+        getWinningPlayer(nextPlayer)
+      )}`;
 
     default:
       return `Error! Unknown message: ${msg}`;
   }
+};
+
+const getWinningPlayer = (nextPlayer) => {
+  return nextPlayer === CONST.PLAYER_1 ? CONST.PLAYER_2 : CONST.PLAYER_1;
 };
