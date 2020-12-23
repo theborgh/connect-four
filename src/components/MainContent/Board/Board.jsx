@@ -11,6 +11,7 @@ export default class Board extends Component {
         <div className="pieceholes-container">
           {pieces.map((column, i) => (
             <BoardColumn
+              board={pieces}
               key={i}
               index={i}
               column={column}

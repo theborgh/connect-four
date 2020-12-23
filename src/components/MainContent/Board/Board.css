@@ -18,4 +18,5 @@
 
 .column:hover {
   background-color: orangered;
+  cursor: pointer;
 }

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import PieceHole from './PieceHole/PieceHole';
+import Piece from './Piece/Piece';
+import CONST from '../../../../constants';
 
 export default class BoardColumn extends Component {
-  placePiece = (nextToMove, column) => {
-    console.log(`Placing a piece for ${nextToMove} on column ${column}`);
-
-    // Change the next player
-    this.props.handleMove();
+  placePiece = (column) => {
+    this.props.handleMove(column);
   };
 
   render() {
-    const { column, index, nextToMove } = this.props;
+    const { column, index, nextToMove, board } = this.props;
 
     return (
-      <div
-        className="column"
-        onClick={() => this.placePiece(nextToMove, index)}
-      >
-        {column.map((el, j) => (
-          <PieceHole key={index + '-' + j} value={el} col={index} row={j} />
-        ))}
+      <div className="column" onClick={() => this.placePiece(index)}>
+        {column.map((el, j) =>
+          board[index][j] === CONST.EMPTY ? (
+            <PieceHole key={index + '-' + j} />
+          ) : (
+            <Piece key={index + '-' + j} nextToMove={nextToMove} />
+          )
+        )}
       </div>
     );
   }

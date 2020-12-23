@@ -3,6 +3,7 @@ import Board from './Board/Board';
 import TopBanner from './TopBanner/TopBanner';
 import ResetButton from './ResetButton/ResetButton';
 import CONST from '../../constants';
+import { addPieceToColumn } from './MainContent-helpers';
 import './MainContent.css';
 
 export default class MainContent extends Component {
@@ -17,12 +18,25 @@ export default class MainContent extends Component {
     };
   }
 
-  toggleNextPlayer = () => {
-    const nextPlayer =
-      this.state.nextToMove === CONST.PLAYER_1
-        ? CONST.PLAYER_2
-        : CONST.PLAYER_1;
-    this.setState({ nextToMove: nextPlayer });
+  handleMove = (column) => {
+    const { nextToMove, board } = this.state;
+
+    const columnToChange = board[column];
+    const { newColumn, inserted } = addPieceToColumn(
+      columnToChange,
+      nextToMove
+    );
+
+    if (inserted) {
+      // TODO: do not mutate board
+      board[column] = newColumn;
+
+      // Toggle next player
+      const nextPlayer =
+        nextToMove === CONST.PLAYER_1 ? CONST.PLAYER_2 : CONST.PLAYER_1;
+      this.setState({ nextToMove: nextPlayer, board });
+    }
+    // TODO: error message?
   };
 
   render() {
@@ -34,7 +48,7 @@ export default class MainContent extends Component {
         <Board
           pieces={board}
           nextToMove={nextToMove}
-          handleMove={this.toggleNextPlayer}
+          handleMove={this.handleMove}
         />
         <ResetButton />
       </div>

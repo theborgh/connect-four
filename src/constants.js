@@ -1,7 +1,7 @@
 const CONST = {
   // Piece colors
-  RED: 'RED',
-  BLUE: 'BLUE',
+  P1_COLOR: 'red',
+  P2_COLOR: 'blue',
   EMPTY: 'EMPTY',
 
   // Board configuration
