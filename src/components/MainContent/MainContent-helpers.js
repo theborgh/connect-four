@@ -250,15 +250,15 @@ const checkForDiagonalWin = (board) => {
       5 - j - 1 < CONST.columnCount && j - i >= 0;
       j--
     ) {
-      console.log(
-        '(5-j-1): ',
-        5 - j - 1,
-        ' j-i: ',
-        j - i,
-        ' board[(5-j-1)][j-i] = ',
-        board[5 - j - 1][j - i]
-      );
-      if (board[5 - j - 1][j - i] === CONST.PLAYER_1) {
+      // console.log(
+      //   '(5-j-1): ',
+      //   5 - j - 1,
+      //   ' j-i: ',
+      //   j - i,
+      //   ' board[(5-j-1)][j-i] = ',
+      //   board[CONST.WINNING_LENGTH - j][j - i]
+      // );
+      if (board[CONST.WINNING_LENGTH - j][j - i] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
           if (consecutiveP1Count === CONST.WINNING_LENGTH) return true;
@@ -266,7 +266,7 @@ const checkForDiagonalWin = (board) => {
           consecutiveP1Count = 1;
           consecutiveP2Count = 0;
         }
-      } else if (board[5 - j - 1][j - i] === CONST.PLAYER_2) {
+      } else if (board[CONST.WINNING_LENGTH - j][j - i] === CONST.PLAYER_2) {
         if (previousPiece === CONST.PLAYER_2) {
           consecutiveP2Count++;
           if (consecutiveP2Count === CONST.WINNING_LENGTH) return true;
@@ -276,7 +276,7 @@ const checkForDiagonalWin = (board) => {
         }
       }
 
-      previousPiece = board[5 - j - 1][j - i];
+      previousPiece = board[CONST.WINNING_LENGTH - j][j - i];
     }
 
     consecutiveP1Count = 0;
