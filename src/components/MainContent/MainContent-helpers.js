@@ -123,4 +123,49 @@ const checkForColumnWin = (board) => {
   return false;
 };
 
-const checkForDiagonalWin = (board) => {};
+const checkForDiagonalWin = (board) => {
+  let consecutiveP1Count = 0,
+    consecutiveP2Count = 0;
+  let previousPiece = CONST.EMPTY;
+
+  // diagonal 1: NW-SE
+  for (let i = 0; i <= CONST.columnCount - CONST.WINNING_LENGTH; i++) {
+    for (let j = 0; i + j < CONST.columnCount && j < CONST.rowCount; j++) {
+      console.log(
+        'i+j: ',
+        i + j,
+        ' i: ',
+        j,
+        ' board[i+j][j] = ',
+        board[i + j][j]
+      );
+      if (board[i + j][j] === CONST.PLAYER_1) {
+        if (previousPiece === CONST.PLAYER_1) {
+          consecutiveP1Count++;
+          if (consecutiveP1Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 1;
+          consecutiveP2Count = 0;
+        }
+      } else if (board[i + j][j] === CONST.PLAYER_2) {
+        if (previousPiece === CONST.PLAYER_2) {
+          consecutiveP2Count++;
+          if (consecutiveP2Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 0;
+          consecutiveP2Count = 1;
+        }
+      }
+
+      previousPiece = board[i + j][j];
+    }
+
+    consecutiveP1Count = 0;
+    consecutiveP2Count = 0;
+    previousPiece = CONST.EMPTY;
+  }
+
+  // diagonal 2: NE-SW
+
+  return false;
+};
