@@ -5,7 +5,7 @@ export default class ResetButton extends Component {
   render() {
     return (
       <button className="reset-button" onClick={this.props.onClick}>
-        Reset game
+        New game
       </button>
     );
   }

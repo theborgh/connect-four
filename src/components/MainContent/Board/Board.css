@@ -12,11 +12,12 @@
 }
 
 .pieceholes-container {
-  margin: 3rem;
+  margin: 2.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-self: center;
+  width: 100%;
 }
 
 .column:hover {
