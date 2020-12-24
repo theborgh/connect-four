@@ -168,14 +168,14 @@ const checkForDiagonalWin = (board) => {
   // diagonal 2: NW-SE down
   for (let i = 1; i <= CONST.rowCount - CONST.WINNING_LENGTH; i++) {
     for (let j = 0; i + j < CONST.rowCount && j < CONST.columnCount; j++) {
-      console.log(
-        ' i+j: ',
-        i + j,
-        ' j: ',
-        j,
-        ' board[j][i+j] = ',
-        board[j][i + j]
-      );
+      // console.log(
+      //   ' i+j: ',
+      //   i + j,
+      //   ' j: ',
+      //   j,
+      //   ' board[j][i+j] = ',
+      //   board[j][i + j]
+      // );
       if (board[j][i + j] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
@@ -202,7 +202,47 @@ const checkForDiagonalWin = (board) => {
     previousPiece = CONST.EMPTY;
   }
 
-  // diagonal 3: NE-SW
+  // diagonal 3: NE-SW down
+  for (let i = 0; i <= CONST.columnCount - CONST.WINNING_LENGTH; i++) {
+    console.log('--- i = ', i);
+    for (
+      let j = CONST.rowCount - 1;
+      i + (CONST.rowCount - 1 - j) < CONST.columnCount && j >= 0;
+      j--
+    ) {
+      // console.log(
+      //   'i + (CONST.rowCount-1-j): ',
+      //   i + (CONST.rowCount - 1 - j),
+      //   ' j: ',
+      //   j,
+      //   ' board[i + (CONST.rowCount-1-j)][j] = ',
+      //   board[i + (CONST.rowCount - 1 - j)][j]
+      // );
+      if (board[i + (CONST.rowCount - 1 - j)][j] === CONST.PLAYER_1) {
+        if (previousPiece === CONST.PLAYER_1) {
+          consecutiveP1Count++;
+          if (consecutiveP1Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 1;
+          consecutiveP2Count = 0;
+        }
+      } else if (board[i + (CONST.rowCount - 1 - j)][j] === CONST.PLAYER_2) {
+        if (previousPiece === CONST.PLAYER_2) {
+          consecutiveP2Count++;
+          if (consecutiveP2Count === CONST.WINNING_LENGTH) return true;
+        } else {
+          consecutiveP1Count = 0;
+          consecutiveP2Count = 1;
+        }
+      }
+
+      previousPiece = board[i + (CONST.rowCount - 1 - j)][j];
+    }
+
+    consecutiveP1Count = 0;
+    consecutiveP2Count = 0;
+    previousPiece = CONST.EMPTY;
+  }
 
   return false;
 };
