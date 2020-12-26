@@ -136,11 +136,9 @@ export default class MainContent extends Component {
         </div>
         <TopBanner
           msg={topBannerMsg}
-          nextPlayer={
-            nextToMove === CONST.PLAYER_1
-              ? this.state.p1Name
-              : this.state.p2Name
-          }
+          nextPlayer={nextToMove}
+          p1Name={p1Name}
+          p2Name={p2Name}
         />
         <div className="board-and-sidebars-container">
           <div className="sidebar hide-on-small">
