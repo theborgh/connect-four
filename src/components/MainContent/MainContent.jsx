@@ -116,6 +116,24 @@ export default class MainContent extends Component {
 
     return (
       <div className="main">
+        <div className="sidebars hide-on-big">
+          <div className="sidebar">
+            <PlayerForm
+              playerID={1}
+              name={p1Name}
+              color={p1Color}
+              handleFormSubmit={this.handlePlayerFormSubmit}
+            />
+          </div>
+          <div className="sidebar">
+            <PlayerForm
+              playerID={2}
+              name={p2Name}
+              color={p2Color}
+              handleFormSubmit={this.handlePlayerFormSubmit}
+            />
+          </div>
+        </div>
         <TopBanner
           msg={topBannerMsg}
           nextPlayer={
@@ -125,7 +143,7 @@ export default class MainContent extends Component {
           }
         />
         <div className="board-and-sidebars-container">
-          <div className="sidebar">
+          <div className="sidebar hide-on-small">
             <PlayerForm
               playerID={1}
               name={p1Name}
@@ -133,6 +151,7 @@ export default class MainContent extends Component {
               handleFormSubmit={this.handlePlayerFormSubmit}
             />
           </div>
+
           <Board
             pieces={board}
             nextToMove={nextToMove}
@@ -141,7 +160,7 @@ export default class MainContent extends Component {
             p1Color={p1Color}
             p2Color={p2Color}
           />
-          <div className="sidebar">
+          <div className="sidebar hide-on-small">
             <PlayerForm
               playerID={2}
               name={p2Name}

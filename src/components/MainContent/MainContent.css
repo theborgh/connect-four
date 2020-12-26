@@ -4,9 +4,27 @@
 
 .board-and-sidebars-container {
   display: flex;
-  /* flex-direction: column; */
 }
 
 .sidebar {
   flex: 1 0;
+}
+
+.hide-on-big {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .sidebars {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hide-on-small {
+    display: none;
+  }
+
+  .hide-on-big {
+    display: flex;
+  }
 }

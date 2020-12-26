@@ -29,3 +29,10 @@ input[type='text'] {
 .form-button {
   padding: 0.3rem 1rem;
 }
+
+@media only screen and (max-width: 1200px) {
+  .sidebar {
+    display: inline;
+    width: 50%;
+  }
+}
