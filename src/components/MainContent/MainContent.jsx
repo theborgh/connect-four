@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Board from './Board/Board';
 import TopBanner from './TopBanner/TopBanner';
 import ResetButton from './ResetButton/ResetButton';
+import PlayerForm from './PlayerForm/PlayerForm';
 import CONST from '../../constants';
 import {
   addPieceToColumn,
@@ -19,6 +20,10 @@ export default class MainContent extends Component {
       ),
       nextToMove: CONST.PLAYER_1,
       isGameFinished: false,
+      p1Name: 'Player1',
+      p2Name: 'Player2',
+      p1Color: CONST.P1_COLOR,
+      p2Color: CONST.P2_COLOR,
     };
   }
 
@@ -48,7 +53,6 @@ export default class MainContent extends Component {
 
       newBoard[column] = newColumn;
 
-      // TODO: check diagonal win condition
       const winState = checkEndgameConditions(newBoard);
 
       // Toggle next player
@@ -71,18 +75,70 @@ export default class MainContent extends Component {
     }
   };
 
+  handlePlayerFormSubmit = (playerID, v) => {
+    if (playerID === 1) {
+      this.setState({
+        p1Name: v.name.value,
+        p1Color: v.color.value,
+      });
+    } else {
+      this.setState({
+        p2Name: v.name.value,
+        p2Color: v.color.value,
+      });
+    }
+  };
+
   render() {
-    const { topBannerMsg, board, nextToMove, isGameFinished } = this.state;
+    const {
+      topBannerMsg,
+      board,
+      nextToMove,
+      isGameFinished,
+      p1Name,
+      p2Name,
+      p1Color,
+      p2Color,
+    } = this.state;
 
     return (
       <div className="main">
-        <TopBanner msg={topBannerMsg} nextPlayer={nextToMove} />
-        <Board
-          pieces={board}
-          nextToMove={nextToMove}
-          handleMove={this.handleMove}
-          isGameFinished={isGameFinished}
+        <TopBanner
+          msg={topBannerMsg}
+          nextPlayer={
+            nextToMove === CONST.PLAYER_1
+              ? this.state.p1Name
+              : this.state.p2Name
+          }
         />
+        <div className="board-and-sidebars-container">
+          <div className="sidebar">
+            Player 1
+            <PlayerForm
+              playerID={1}
+              name={p1Name}
+              color={p1Color}
+              handleFormSubmit={this.handlePlayerFormSubmit}
+            />
+          </div>
+          <Board
+            pieces={board}
+            nextToMove={nextToMove}
+            handleMove={this.handleMove}
+            isGameFinished={isGameFinished}
+            p1Color={p1Color}
+            p2Color={p2Color}
+          />
+          <div className="sidebar">
+            Player 2
+            <PlayerForm
+              playerID={2}
+              name={p2Name}
+              color={p2Color}
+              handleFormSubmit={this.handlePlayerFormSubmit}
+            />
+          </div>
+        </div>
         <ResetButton onClick={this.resetBoard} />
       </div>
     );

@@ -9,9 +9,16 @@ export default class BoardColumn extends Component {
   };
 
   render() {
-    const { column, index, nextToMove, board, isGameFinished } = this.props;
+    const {
+      column,
+      index,
+      nextToMove,
+      board,
+      isGameFinished,
+      p1Color,
+      p2Color,
+    } = this.props;
 
-    // TODO: use css GRID to display pieces and holes!
     return (
       <div
         className={`column ${
@@ -23,7 +30,10 @@ export default class BoardColumn extends Component {
           board[index][j] === CONST.EMPTY ? (
             <PieceHole key={index + '-' + j} />
           ) : (
-            <Piece key={index + '-' + j} nextToMove={nextToMove} />
+            <Piece
+              key={index + '-' + j}
+              color={nextToMove === CONST.PLAYER_1 ? p2Color : p1Color}
+            />
           )
         )}
       </div>

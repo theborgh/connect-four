@@ -1,3 +1,12 @@
 .main {
   text-align: center;
 }
+
+.board-and-sidebars-container {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.sidebar {
+  flex: 1 0;
+}

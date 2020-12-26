@@ -4,7 +4,14 @@ import BoardColumn from './BoardColumn/BoardColumn';
 
 export default class Board extends Component {
   render() {
-    const { pieces, nextToMove, handleMove, isGameFinished } = this.props;
+    const {
+      pieces,
+      nextToMove,
+      handleMove,
+      isGameFinished,
+      p1Color,
+      p2Color,
+    } = this.props;
 
     return (
       <div className="board">
@@ -18,6 +25,8 @@ export default class Board extends Component {
               nextToMove={nextToMove}
               handleMove={handleMove}
               isGameFinished={isGameFinished}
+              p1Color={p1Color}
+              p2Color={p2Color}
             />
           ))}
         </div>
