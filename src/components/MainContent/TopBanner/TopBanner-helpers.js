@@ -1,15 +1,6 @@
 import CONST from '../../../constants';
 
 export const getMessage = (msg, nextPlayer, p1Name, p2Name) => {
-  console.log(
-    'next player code: ',
-    nextPlayer,
-    ' p1Name: ',
-    p1Name,
-    ' p2Name: ',
-    p2Name
-  );
-
   switch (msg) {
     case CONST.NOW_TO_MOVE:
       return (
