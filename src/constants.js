@@ -18,7 +18,7 @@ const CONST = {
   PLAYER_WINS: '{PLAYER} wins!',
   DRAW: 'This game ended in a draw!',
   NO_MORE_ROOM:
-    'There is no more room in this column! {PLAYER}, please select another column',
+    'There is no more room in this column! {PLAYER}, please select a different column',
 
   // Game settings
   WINNING_LENGTH: 4,

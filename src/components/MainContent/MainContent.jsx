@@ -113,7 +113,6 @@ export default class MainContent extends Component {
         />
         <div className="board-and-sidebars-container">
           <div className="sidebar">
-            Player 1
             <PlayerForm
               playerID={1}
               name={p1Name}
@@ -130,7 +129,6 @@ export default class MainContent extends Component {
             p2Color={p2Color}
           />
           <div className="sidebar">
-            Player 2
             <PlayerForm
               playerID={2}
               name={p2Name}
