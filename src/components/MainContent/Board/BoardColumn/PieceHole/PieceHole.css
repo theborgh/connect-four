@@ -1,11 +1,9 @@
 .piecehole {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: min(4.5rem, 7.77vw);
+  height: min(4.5rem, 7.77vw);
   border: 1px solid red;
   z-index: 3;
   background-color: lightgray;
   border-radius: 50%;
-  margin: 0 1rem;
-  /* 15% is enough space for 6 items/column but not 7 */
-  /* flex: 1 0 15%; */
+  align-self: center;
 }
