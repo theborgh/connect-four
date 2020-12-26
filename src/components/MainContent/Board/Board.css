@@ -1,3 +1,8 @@
+:root {
+  --hover-color-1: rgba(0, 0, 255, 0.6);
+  --hover-color-2: rgba(255, 0, 0, 0.6);
+}
+
 .board {
   display: flex;
   width: 55rem;
@@ -32,12 +37,12 @@
   cursor: pointer;
 }
 
-.blue-bg:hover {
-  background-color: rgba(0, 0, 255, 0.7);
+.p1-bg:hover {
+  background-color: var(--hover-color-1);
 }
 
-.red-bg:hover {
-  background-color: rgba(255, 0, 0, 0.7);
+.p2-bg:hover {
+  background-color: var(--hover-color-2);
 }
 
 .no-bg:hover {

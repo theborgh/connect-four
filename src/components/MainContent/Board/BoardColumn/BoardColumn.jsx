@@ -22,7 +22,7 @@ export default class BoardColumn extends Component {
     return (
       <div
         className={`column ${
-          nextToMove === CONST.PLAYER_1 ? 'blue-bg' : 'red-bg'
+          nextToMove === CONST.PLAYER_1 ? 'p1-bg' : 'p2-bg'
         } ${isGameFinished ? 'no-bg' : ''}`}
         onClick={() => this.placePiece(index)}
       >

@@ -7,6 +7,7 @@ import CONST from '../../constants';
 import {
   addPieceToColumn,
   checkEndgameConditions,
+  hexToRGBA,
 } from './MainContent-helpers';
 import './MainContent.css';
 
@@ -77,15 +78,27 @@ export default class MainContent extends Component {
 
   handlePlayerFormSubmit = (playerID, v) => {
     if (playerID === 1) {
-      this.setState({
-        p1Name: v.name.value,
-        p1Color: v.color.value,
-      });
+      this.setState(
+        {
+          p1Name: v.name.value,
+          p1Color: v.color.value,
+        },
+        document.documentElement.style.setProperty(
+          '--hover-color-1',
+          hexToRGBA(v.color.value, 0.6)
+        )
+      );
     } else {
-      this.setState({
-        p2Name: v.name.value,
-        p2Color: v.color.value,
-      });
+      this.setState(
+        {
+          p2Name: v.name.value,
+          p2Color: v.color.value,
+        },
+        document.documentElement.style.setProperty(
+          '--hover-color-2',
+          hexToRGBA(v.color.value, 0.6)
+        )
+      );
     }
   };
 
