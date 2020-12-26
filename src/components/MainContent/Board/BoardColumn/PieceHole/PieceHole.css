@@ -1,9 +1,12 @@
 .piecehole {
   width: min(4.5rem, 7.77vw);
   height: min(4.5rem, 7.77vw);
-  border: 1px solid red;
   z-index: 3;
-  background-color: lightgray;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5074404761904762) 0%,
+    rgba(0, 0, 0, 0.21612394957983194) 100%
+  );
   border-radius: 50%;
   align-self: center;
 }
