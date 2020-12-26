@@ -48,3 +48,13 @@
 .no-bg:hover {
   background-color: transparent;
 }
+
+@media only screen and (max-width: 768px) {
+  .p1-bg:hover {
+    background-color: transparent;
+  }
+
+  .p2-bg:hover {
+    background-color: transparent;
+  }
+}

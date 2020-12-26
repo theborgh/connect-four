@@ -14,7 +14,7 @@ export const getMessage = (msg, nextPlayer) => {
         <strong>{CONST.NO_MORE_ROOM.replace('{PLAYER}', nextPlayer)}</strong>
       );
     case CONST.DRAW:
-      return <strong>CONST.DRAW</strong>;
+      return <strong>{CONST.DRAW}</strong>;
     case CONST.PLAYER_WINS:
       return (
         <strong>
