@@ -85,7 +85,7 @@ export default class MainContent extends Component {
         },
         document.documentElement.style.setProperty(
           '--hover-color-1',
-          hexToRGBA(v.color.value, 0.6)
+          hexToRGBA(v.color.value, CONST.ALPHA)
         )
       );
     } else {
@@ -96,7 +96,7 @@ export default class MainContent extends Component {
         },
         document.documentElement.style.setProperty(
           '--hover-color-2',
-          hexToRGBA(v.color.value, 0.6)
+          hexToRGBA(v.color.value, CONST.ALPHA)
         )
       );
     }

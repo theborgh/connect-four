@@ -22,6 +22,9 @@ const CONST = {
 
   // Game settings
   WINNING_LENGTH: 4,
+
+  // Style configuration
+  ALPHA: 0.6,
 };
 
 export default CONST;
