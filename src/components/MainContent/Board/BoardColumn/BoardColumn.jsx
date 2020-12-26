@@ -32,7 +32,7 @@ export default class BoardColumn extends Component {
           ) : (
             <Piece
               key={index + '-' + j}
-              color={nextToMove === CONST.PLAYER_1 ? p2Color : p1Color}
+              color={board[index][j] === CONST.PLAYER_1 ? p1Color : p2Color}
             />
           )
         )}

@@ -7,7 +7,7 @@ export default function PlayerForm(props) {
   const [playerColor, setPlayerColor] = useState(color);
 
   const handleSubmit = (e) => {
-    const { playerID, handleFormSubmit } = props;
+    const { handleFormSubmit } = props;
 
     e.preventDefault();
     handleFormSubmit(playerID, e.target.elements);
