@@ -3,16 +3,24 @@ import CONST from '../../../constants';
 export const getMessage = (msg, nextPlayer) => {
   switch (msg) {
     case CONST.NOW_TO_MOVE:
-      return `${CONST.NOW_TO_MOVE}${nextPlayer}`;
+      return (
+        <span>
+          {CONST.NOW_TO_MOVE}
+          <strong>{nextPlayer}</strong>
+        </span>
+      );
     case CONST.NO_MORE_ROOM:
-      return `${CONST.NO_MORE_ROOM.replace('{PLAYER}', nextPlayer)}`;
+      return (
+        <strong>{CONST.NO_MORE_ROOM.replace('{PLAYER}', nextPlayer)}</strong>
+      );
     case CONST.DRAW:
-      return CONST.DRAW;
+      return <strong>CONST.DRAW</strong>;
     case CONST.PLAYER_WINS:
-      return `${CONST.PLAYER_WINS.replace(
-        '{PLAYER}',
-        getWinningPlayer(nextPlayer)
-      )}`;
+      return (
+        <strong>
+          {CONST.PLAYER_WINS.replace('{PLAYER}', getWinningPlayer(nextPlayer))}
+        </strong>
+      );
 
     default:
       return `Error! Unknown message: ${msg}`;

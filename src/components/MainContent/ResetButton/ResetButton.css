@@ -1,7 +1,8 @@
 .reset-button {
   margin: 1rem;
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1.3rem;
   background-color: rgb(60, 24, 190);
   color: whitesmoke;
   border-radius: 5px;
+  font-size: 1.3rem;
 }

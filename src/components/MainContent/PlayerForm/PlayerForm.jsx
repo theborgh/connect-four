@@ -41,7 +41,7 @@ export default function PlayerForm(props) {
             />
           </div>
         </div>
-        <button className="form-button">OK</button>
+        <button className="form-button">Apply</button>
       </form>
     </div>
   );
