@@ -1,5 +1,5 @@
 const CONST = {
-  // Piece colors
+  // Default piece colors
   P1_COLOR: '#0000FF',
   P2_COLOR: '#FF0000',
   EMPTY: 'EMPTY',

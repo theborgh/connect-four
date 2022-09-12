@@ -33,6 +33,7 @@ See package.json
 - Refactor to TypeScript?
 - Add SASS?
 - Add BE with user authentication
+- Add testing
 
 ## Contributing
 
