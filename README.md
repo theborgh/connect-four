@@ -29,6 +29,10 @@ See package.json
 
 - Add piece placing animation (piece falls down the selected column and into the selected place)
 - Save player settings to localstorage
+- Add play vs AI
+- Refactor to TypeScript?
+- Add SASS?
+- Add BE with user authentication
 
 ## Contributing
 
