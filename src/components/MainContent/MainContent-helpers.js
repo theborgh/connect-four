@@ -131,14 +131,6 @@ const checkForDiagonalWin = (board) => {
   // diagonal 1: NW-SE up
   for (let i = 0; i <= CONST.columnCount - CONST.WINNING_LENGTH; i++) {
     for (let j = 0; i + j < CONST.columnCount && j < CONST.rowCount; j++) {
-      // console.log(
-      //   'i+j: ',
-      //   i + j,
-      //   ' j: ',
-      //   j,
-      //   ' board[i+j][j] = ',
-      //   board[i + j][j]
-      // );
       if (board[i + j][j] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
@@ -168,14 +160,6 @@ const checkForDiagonalWin = (board) => {
   // diagonal 2: NW-SE down
   for (let i = 1; i <= CONST.rowCount - CONST.WINNING_LENGTH; i++) {
     for (let j = 0; i + j < CONST.rowCount && j < CONST.columnCount; j++) {
-      // console.log(
-      //   ' i+j: ',
-      //   i + j,
-      //   ' j: ',
-      //   j,
-      //   ' board[j][i+j] = ',
-      //   board[j][i + j]
-      // );
       if (board[j][i + j] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
@@ -209,14 +193,6 @@ const checkForDiagonalWin = (board) => {
       i + (CONST.rowCount - 1 - j) < CONST.columnCount && j >= 0;
       j--
     ) {
-      // console.log(
-      //   'i + (CONST.rowCount-1-j): ',
-      //   i + (CONST.rowCount - 1 - j),
-      //   ' j: ',
-      //   j,
-      //   ' board[i + (CONST.rowCount-1-j)][j] = ',
-      //   board[i + (CONST.rowCount - 1 - j)][j]
-      // );
       if (board[i + (CONST.rowCount - 1 - j)][j] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
@@ -250,14 +226,6 @@ const checkForDiagonalWin = (board) => {
       5 - j - 1 < CONST.columnCount && j - i >= 0;
       j--
     ) {
-      // console.log(
-      //   '(5-j-1): ',
-      //   5 - j - 1,
-      //   ' j-i: ',
-      //   j - i,
-      //   ' board[(5-j-1)][j-i] = ',
-      //   board[CONST.WINNING_LENGTH - j][j - i]
-      // );
       if (board[CONST.WINNING_LENGTH - j][j - i] === CONST.PLAYER_1) {
         if (previousPiece === CONST.PLAYER_1) {
           consecutiveP1Count++;
