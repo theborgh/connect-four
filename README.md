@@ -28,13 +28,13 @@ See package.json
 ## Todo
 
 - Add piece placing animation (piece falls down the selected column and into the selected place)
+- On game end: turn pointer to pointer, change alpha of the entire board
 - Save player settings to localstorage
 - Add play vs AI
 - Refactor to TypeScript?
 - Add SASS?
 - Add BE with user authentication
 - Add testing
-- On game end: turn pointer to pointer, change alpha of the entire board
 
 ## Contributing
 

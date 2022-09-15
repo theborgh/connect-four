@@ -19,6 +19,8 @@
   .sidebars {
     display: flex;
     flex-direction: row;
+    background-color: #49597a44;
+    padding-bottom: 1rem;
   }
 
   .hide-on-small {
